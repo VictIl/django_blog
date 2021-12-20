@@ -1,0 +1,18 @@
+﻿{% extends 'main.html' %}
+
+{% block content %}
+<div id="detail_div">
+    <div>
+        <div id="left"><img src="{{movie.img.url}}" /></div>
+        <div id="right">
+            <h2><a href="{% url 'home' %}">{{ movie.title }}</a></h2>
+            <h3>{{movie.quote}}</h3>
+        </div>
+    </div>
+    <div>
+        <p>{{movie.content}}</p>
+        <p>Overall: {{movie.rating}}</p>
+    </div>
+</div>
+
+ {% endblock content %}

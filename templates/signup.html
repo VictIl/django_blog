@@ -1,0 +1,26 @@
+﻿{% extends 'user.html' %}
+
+{% block content %}
+<div>
+
+    <div id="cent">
+        <form id="signup" method="post">
+            {% csrf_token %}
+            <div class="form-error">{{form.non_field_errors}}</div>
+            {% for f in form %}
+
+
+            <p><label class="f_label" for="{{f.id_for_label}}">{{f.label}}:</label>{{f}}</p>
+            <div class="form-error">{{f.errors}}</div>
+
+            {% endfor %}
+
+
+            <button id=mainb type="submit">Ready</button>
+        </form>
+        <div class="la">
+            <a href="{% url 'login' %}">Already have an account?Follow me</a>
+        </div>
+</div></div>
+        <!---<h2><a href="{% url 'login'   %}">Already have an account?Follow me</a></h2>-->
+        {% endblock content %}

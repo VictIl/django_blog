@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/******************************************************************************************************************/
+body{
+    overflow:hidden;
+
+}
+#filterlist {
+    display: flex;color:white;
+    list-style-type: none;
+}
+#filterlist li {
+   margin-left:20px;
+}
+.line {
+    display: flex;
+    color: black;
+    width:100%;
+    font-size:6px;
+}
+    .line p {
+        margin-left: 20%;
+    }
+
+/**********************************************************************************    nav     ************************/
+
+
+nav#mainn {
+    position: relative;
+    margin-top: -2%;
+
+    padding: 0;
+    border: none;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 3.6vw;
+    background-color: rgba(189, 195, 195, 1);
+}
+
+nav h3 {
+    color: black;
+    letter-spacing: -0.04em;
+
+    font-family: 'Marcellus SC', serif;
+    font-size: 2.6vw;
+    background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, rgba(187, 204, 205, 1), transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+
+@keyframes reveal {
+    80% {
+        letter-spacing: 1.1vw;
+    }
+
+    100% {
+        background-size: 300% 300%;
+    }
+}
+
+@keyframes glow {
+    40% {
+        text-shadow: 0 0 1.16vw #fff;
+    }
+}
+
+nav h3:hover {
+    cursor: default;
+}
+
+#nav-links {
+    color: rgba(189, 195, 195, 1);
+    letter-spacing: -0.02em;
+    font-family: 'Dosis', sans-serif;
+    position: relative;
+    font-size: 1.8vw;
+    display: flex;
+    margin-top: 0.4vw;
+    padding: 0;
+    justify-content: space-around;
+    width: 50%;
+    height: 100%;
+}
+
+    #nav-links li {
+        margin: 0;
+        list-style: none;
+    }
+
+        #nav-links li a {
+            color:  rgba(226, 226, 226, 1);
+            letter-spacing: 0.4vw;
+            font-weight: bold;
+            font-size: 1.867vw;
+            text-decoration: none;
+        }
+
+            #nav-links li a:hover {
+                animation: fade3 1.2s;
+                color: red;
+            }
+
+@keyframes fade3 {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+
+    ;50% {
+        color: rgb(94, 68, 86);
+    }
+
+    ; 80% {
+        color: rgb(59, 36, 52);
+    }
+
+    ;
+}
+
+@media screen and (max-width: 600px) {
+    #nav-links {
+        width: 74%;
+    }
+}
+
+nav h3:hover {
+    cursor: default;
+}
+/**/
+/*chosen nav li*/
+#nav-links li:nth-child(1) .ch {
+    color: red;
+    animation: none;
+    padding: 0;
+    cursor: default;
+    text-align: center;
+    margin: 0;
+    border-bottom: solid red 0.1vw;
+}
+/******************************************************************************************************* ratings lis t ***/
+
+
+#filterlist {
+    background: rgba(220, 220, 220, 1);
+    margin-top: 1vw;
+    list-style-type: none;
+    color: rgba(189, 195, 195, 1);
+    font-size: 1.4vw;
+    letter-spacing: 0.06em;
+    border-bottom:solid 1px grey;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+}
+#filterlist li {
+    border: 1px solid red;
+    width:2%;
+    margin-left:9%;
+}
+#filterlist li a{
+   text-decoration:none;color:black;
+   padding:0.2vw 1vw;
+   
+}
+#filterlist li :hover {color:white;
+       background:red;
+       border-radius:0.2vw;
+    }
+    #filterlist li.selected{
+        color: red;
+     
+
+    }
+/******************************************************************************************************* pagination lis t ***/
+#nav_pag {
+    margin:1vw 0 0 1vw;
+    height: 7px;
+   
+}
+
+#nav_pag {
+    display: block;
+    position: absolute;
+    margin-top: 6%;
+    margin-left: 40%;
+    width: 6%;
+    text-decoration: none;
+}
+        #nav_pag div {
+            margin-top: 9%;
+            border-radius: 0.1vw;
+            width: 100%;
+            height: 2vw;
+            /*border*/
+        }
+            #nav_pag div a {
+                height: 100%;
+                padding: 0.6vw 3vw;
+
+                border: none;
+                border: solid black 0.15vw;
+                font-size: 0px;
+                border-radius: 0.1vw;
+                text-decoration: none;
+            }
+  #nav_pag div :hover,#nav_pag .p_active {
+    background: black;
+}
+
+/*************************************************************************** movie divs */
+.movie_container{
+    margin:0;
+    text-align:center;
+    width:100%;
+}
+.movie_container div#movie {
+    width: 30%;
+    height:42%;
+    border-radius: 2px;
+    font-size: 1vw;
+    letter-spacing: -0.02em;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+}
+.movie_container div#movie #movie_img{
+    width:100%;
+    height:80%;
+}
+.movie_container div#movie img {
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+    .movie_container #movie #cover {
+        text-shadow: 3px 0px 20px #000000;
+        text-decoration: none;
+        position: absolute;
+        margin-top: -14%;
+        text-align: center;
+        width: 30%;
+        height: 34%;
+        opacity: 0;
+    }
+        .movie_container #movie #cover:hover{
+            opacity:1;
+        }
+        .movie_container #movie #cover h2 {
+            margin-top: 10%;
+        }
+        .movie_container #movie #cover h2 a {
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            font-family: 'Marcellus SC', serif;
+            font-size: 2.6vw;
+            color: red;
+        }
+        .movie_container #movie #cover h3 {
+            color: white;
+            width:94%;
+            margin-left:2%;
+            margin-top:4%;
+            letter-spacing: 0.02em;
+            font-family: 'Dosis', sans-serif;
+            position: relative;
+            font-size: 1vw;
+        }
+        .movie_container #movie #cover h2 a:hover {
+            
+            color: white;
+        }
+    .movie_container div#movie:nth-child(2n+1) {
+        margin: 14% 0 0 7%;
+        -webkit-box-shadow: 0px 2px 3px 1px #000000;
+        box-shadow: 0px 6px 3px 1px #000000;
+    }
+    .movie_container div#movie:nth-child(even) {
+        margin: -30% 0 0 62%;
+        -webkit-box-shadow: 0px 2px 3px 1px #000000;
+        box-shadow: 0px 6px 3px 1px #000000;
+    }
+.linwe {
+    display: flex;
+    position: absolute;
+    letter-spacing: 0.02em;
+    width: 30%;
+    ;
+    font-family: 'Dosis', sans-serif;
+    background: rgba(220, 220, 220, 1);
+    font-weight: bold;
+    font-size: 1vw;
+}
+.linwe p:nth-child(2){
+    margin-left:34%;
+    width:100%;
+}
+.linwe:nth-child(2n+1){
+    position:absolute;
+    margin:10% 0 0 4%;
+}
+.linwe:nth-child(2n) {
+    position: absolute;
+    margin-left: 40%;
+    margin: 27% 0 0 59%;
+}
+.movie_container div#movie #stat {
+    background-color: lightgrey;
+    height: 28%;
+    justify-content: center;
+    text-align: center;
+
+    border-radius: 0 0 2px 2px;
+    letter-spacing: 0.04em;
+   font-weight:bold;
+    font-family: 'Dosis', sans-serif;
+}
+.movie_container div#movie #stat p{
+    padding-top:2%;
+}
+
+
+
+.movie_container div#movie #stat a {
+    position: absolute;
+    margin: 0;
+    margin-top: 0%;
+    margin-left: 9.2%;
+    text-decoration: none;
+    padding: 0.1vw 1.5vw;
+    font-size: 1.1vw;
+    border-radius: 0.6vw;
+    background: red;
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: -0.04em;
+    font-size: 1.3vw;
+    font-weight: bold;
+    color: white;
+}
+
+.movie_container div#movie #stat a:hover {
+    background: white;
+    border: solid red 0.4px;
+    color: red;
+}
+/**************************************************************** deatail   view  */
+#detail_div {
+    -webkit-box-shadow: inset 0px 0px 4px 2px #616161;
+    box-shadow: inset 0px 0px 4px 2px #616161;
+    width: 90%;
+    margin-top: 3%;
+    background-color: lightgray;
+    padding: 1%;
+    border-radius: 2px;
+    margin-left: 4%;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: -0.04em;
+    font-size: 1.2vw;
+    line-height: 1.9em;
+    font-weight: bold;
+}
+#detail_div div:nth-child(1){
+    display:flex;
+
+}
+    #detail_div div:nth-child(1) #left {
+        width: 30%;
+        height: 20%;
+        -webkit-box-shadow: 0px 2px 3px 1px #000000;
+        box-shadow: 0px 1px 3px 1px #000000;
+    }
+    #detail_div div:nth-child(1) #left img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+    }
+#detail_div div:nth-child(1) #right {
+    width: 60%;
+    height: 20%;
+}
+    #detail_div div:nth-child(1) #right h2 {
+        font-family: 'Marcellus SC', serif;
+        font-size: 2.4vw;
+        color: black;
+        letter-spacing: 0.06em;
+
+        background: linear-gradient(to right, #000000 0, rgb(255, 255, 255) 10%, #000000 15%);
+        background-position: 0;
+        background-clip: unset;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shiner 3.8s infinite linear;
+        animation-duration: 3.8s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-name: shiner;
+        cursor: default;
+        animation-fill-mode: forwards;
+        -webkit-text-size-adjust: none;
+        white-space: nowrap;
+    }
+    @keyframes shiner{
+        0% {
+            background-position: 0;
+        }
+
+        60% {
+            background-position: 20vw;
+        }
+
+        100% {
+            background-position: 50vw;
+        }
+
+    }
+    #detail_div div:nth-child(1) #right h2 a{
+        font-family: 'Marcellus SC', serif;text-decoration:none;
+        font-size: 2vw;
+        color: black;
+        letter-spacing: 0.04em;
+        color: black;
+    }
+        #detail_div div:nth-child(1) #right h2 a:hover {
+          
+
+            color: red;
+        }
+#detail_div div:nth-child(2) p:nth-child(2) {
+    margin-top:2%;
+    font-family: 'Marcellus SC', serif;
+    font-size: 1.3vw;
+    color: red;
+}

@@ -1,0 +1,31 @@
+﻿{% extends 'user.html' %}
+
+{% block content %}
+<div>
+
+    <div id="cent">
+        <form id="login" method="post">
+            <div class="form-error">{{form.non_field_errors}}</div>
+            {% csrf_token %}
+            {% for f in form %}
+
+            <p><label class="f_label" for="{{f.id_for_label}}">{{f.label}}:</label>{{f}}</p>
+            <div class="form-error">{{f.errors}}</div>
+
+            {% endfor %}
+
+
+            <button id="mainb2" type="submit">done</button>
+        </form>
+
+</div></div>
+        <!------------------------------------------------------------------------------------chec
+        {% if user.is_authenticated %}
+
+        <h2><a href="{% url 'logout'   %}">logout</a></h2>
+        <h2><a href="{% url 'add'   %}">Add to db</a></h2>
+        {% else %}
+        <p>nothing fot you to see</p>
+        {% endif %}
+            k-->
+        {% endblock content %}

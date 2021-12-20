@@ -1,0 +1,35 @@
+﻿{% extends 'user.html' %}
+{% load static %}
+{% block content %}
+<div id="addd">
+
+    <div id="cent">
+        <form enctype="multipart/form-data" id="try" class="form" action="{% url 'add' %}" method="post">
+            {% csrf_token %}
+            <div class="form-error">{{form.non_field_errors}}</div>
+            <p><label class="f_label" for="{{form.title.id_for_label}}">{{form.title.label}}:</label>{{form.title}}</p>
+            <div class="form-error">{{form.title.errors}}</div>
+
+
+            <p><label class="f_label" for="{{form.quote.id_for_label}}">{{form.quote.label}}:</label>{{form.quote}}</p>
+            <div class="form-error">{{form.quote.errors}}</div>
+
+            <p><label class="f_label" for="{{form.content.id_for_label}}">{{form.content.label}}:</label>{{form.content}}</p>
+            <div class="form-error">{{form.content.errors}}</div>
+            <div id="tog">
+                <p id="p1"><label class="f_label" for="{{form.img.id_for_label}}">{{form.img.label}}</label>{{form.img}}</pid="p1">
+                <div class="form-error">{{form.img.errors}}</div>
+
+                <p id="p"><label class="f_label" for="{{form.is_published.id_for_label}}">{{form.is_published.label}}:</label>{{form.is_published}}</pid="p">
+                <div class="form-error">{{form.is_published.errors}}</div>
+            </div>
+            <div id="fin">
+                <p id="p1"><label class="f_label" for="{{form.rating.id_for_label}}">{{form.rating.label}}:</label>{{form.rating}}</p>
+                <div class="form-error">{{form.rating.errors}}</div>
+                
+                <button id="mainb3" type="submit">Done</</button>
+            </div>
+
+        </form>
+</div></div>
+        {% endblock content %}

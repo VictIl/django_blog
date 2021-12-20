@@ -1,0 +1,52 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UserThings</title>
+    <link href="{% static 'css/user.css' %}" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <header>
+        <nav id="mainn">
+            <div>
+                <h3>DjangoPurgatory</h3>
+            </div>
+            <ul id="nav-links">
+                <li><a href="{% url 'home'   %}">Home</a></li>
+
+                {% if user.is_authenticated %}
+
+                <li><a href="{% url 'add'   %}">Post</a></li>
+                <li><a href="{% url 'logout'   %}">Logout</a></li>
+
+
+                {% else %}
+                <li><a class=ch href="{% url 'signup'   %}">MyAccount</a></li>
+
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+    <h3 id="title">{{title}}</h3>
+    <div class="animation1">
+        
+                {% block content %}
+
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+

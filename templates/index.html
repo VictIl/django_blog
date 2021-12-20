@@ -1,0 +1,40 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <article class="wrapper">
+    </article>
+    <article class="wrapper2">
+    </article>
+    <div id=body2>
+
+
+        <a id="mainb" href="{% url 'home'  %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Press when you feel like it
+        </a>
+
+
+
+        <!-- <h2><a href="{% url 'signup'   %}">My account</a></h2>
+        <img src="{% static 'img/oi.jpg' %}" />-->
+    </div>
+</body>
+</html>
+
+

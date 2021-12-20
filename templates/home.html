@@ -1,10 +1,77 @@
-﻿{% extends 'base.html' %}
+﻿{% extends 'main.html' %}
 
+
+{% load static %}
 {% block content %}
-  {% for post in object_list %}
-<div class="post-entry">
-    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-    <p>{{ post.body }}</p>
+
+<ul id="filterlist">
+    {% if rate_selected == 0 %}
+    <li class="selected"> All  </li>
+    {% else %}
+    <li><a href='/home/'> All</a>  </li>
+    {% endif  %}
+
+
+
+    {% for r in ratings %}
+    {% if r.pk == rate_selected %}
+    <li class="selected">{{r.scale}}  </li>
+    {% else %}
+    <li><a href="{{r.get_absolute_url}}">{{r.scale}}</a>  </li>
+    {% endif  %}
+    {% endfor %}
+</ul>
+
+
+
+
+
+
+<div id="nav_pag">
+    <!-- pagination--->
+    {% for p in page_obj.paginator.page_range  %}
+    {% if page_obj.number == p %}
+    <div>
+        <a class="p_active" href="?page={{p}}"> </a>
+    </div>
+    {% else %}
+    <div>
+        <a href="?page={{p}}"> </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+
 </div>
-  {% endfor %}
-{% endblock content %}
+<!--<img src="{% static 'img/ghhh.jpg' %}" />-->
+{% for movie in page_obj %}
+<div class="linwe">
+    <p>Rated:{{movie.rating}}</p>
+    <p>{{movie.time_updated|date:"d-m-Y H:i:s"}}</p>
+
+</div>
+ {% endfor %}
+<div class="movie_container">
+    {% for movie in page_obj %}
+    <div id="movie">
+        {% if movie.img %}
+        <div id="movie_img"><img  src="{{movie.img.url}}" /></div>
+        {% endif  %}
+        <div id="cover">
+            <h2><a href="{% url 'test' movie.pk %}">{{ movie.title }}</a></h2>
+
+            <h3> {{ movie.quote }}</h3>
+        </div>
+        <div id="stat">
+
+            <p>{{ movie.content|truncatewords:20 }}</p>
+            <a href="{% url 'test' movie.pk %}">Go on</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+    {% endblock content %}
